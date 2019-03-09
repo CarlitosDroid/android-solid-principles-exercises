@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">android-solid-principles-examples</string>
+    <!--Remember, don't try not to use the same key for large texts,
+     because we'll also need to change the key in the activity and
+     it'll be a new reason to change for the activity-->
+    <string name="welcome_message">Welcome to my application!</string>
+    <string name="first_name_question">What is your first name?</string>
+    <string name="last_name_question">What is your last name?</string>
 </resources>

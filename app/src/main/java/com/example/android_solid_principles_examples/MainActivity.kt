@@ -11,30 +11,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tvWelcome.text = "Welcome to my application!"
+        //Using a string resource or constant, the responsibility is delegated
+        tvWelcome.text = getString(R.string.welcome_message)
 
-        //Ask for user information
-        val person = Person()
+        //Pay attention, in this case the responsibility of EditTextView is to request data and provide data
+        tvFirstName.text = getString(R.string.first_name_question)
+        tvLastName.text = getString(R.string.last_name_question)
 
-        tvFirstName.text = "What is your first name?"
-        person.firstName = etFirstName.text.toString()
+        settingUpViewListeners()
+    }
 
-        tvLastName.text = "What is your last name?"
-        person.lastName = etLastName.text.toString()
-
-        //Checks to be sure the first name and last names are valid
-        if(person.firstName.isNullOrEmpty()){
-            Toast.makeText(this, "You didn't give us a valid first name!", Toast.LENGTH_SHORT).show()
-            return
+    private fun settingUpViewListeners() {
+        btnCreateAccountName.setOnClickListener {
+            val person = PersonDataCapture.capture(etFirstName.text.toString(), etLastName.text.toString())
+            if (!PersonValidator.validate(this, person)) return@setOnClickListener
+            AccountGenerator.createAccount(this, person)
         }
+    }
 
-        if(person.lastName.isNullOrEmpty()){
-            Toast.makeText(this, "You didn't give us a valid last name!", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        //Create a user name for the person
-        Toast.makeText(this, "YOUR USERNAME IS ${person.firstName!!.substring(0,1)} ${person.lastName}", Toast.LENGTH_LONG).show()
-
+    fun showValidationMessage(string: String) {
+        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
     }
 }

@@ -13,18 +13,18 @@
             android:text="Hello World!"
             tools:text="Welcome to my application!"
             android:id="@+id/tvWelcome"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/tvFirstName"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvFirstName" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvFirstName"
             tools:text="What is your first name?"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvWelcome" app:layout_constraintBottom_toTopOf="@+id/etFirstName"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+            app:layout_constraintBottom_toTopOf="@+id/etFirstName" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,18 +32,18 @@
             android:text="Name"
             android:ems="10"
             android:id="@+id/etFirstName"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/tvFirstName"
-            app:layout_constraintBottom_toTopOf="@+id/tvLastName"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvFirstName"
+            app:layout_constraintBottom_toTopOf="@+id/tvLastName" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
             tools:text="What is your last name?"
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvLastName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etFirstName" app:layout_constraintBottom_toTopOf="@+id/etLastName"/>
+            app:layout_constraintTop_toBottomOf="@+id/etFirstName"
+            app:layout_constraintBottom_toTopOf="@+id/etLastName" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,8 +51,16 @@
             android:text="Name"
             android:ems="10"
             android:id="@+id/etLastName"
+            app:layout_constraintTop_toBottomOf="@+id/tvLastName"
+            app:layout_constraintBottom_toTopOf="@+id/btnCreateAccountName" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+            android:text="Create Account Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCreateAccountName"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/etLastName"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLastName"/>
+            app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
