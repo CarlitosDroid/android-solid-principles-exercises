@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
 
         //Using a string resource or constant, the responsibility is delegated
         tvWelcome.text = getString(R.string.welcome_message)
-
-        //Pay attention, in this case the responsibility of EditTextView is to request data and provide data
         tvFirstName.text = getString(R.string.first_name_question)
         tvLastName.text = getString(R.string.last_name_question)
 
@@ -23,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun settingUpViewListeners() {
         btnCreateAccountName.setOnClickListener {
+            //Pay attention, in this case the responsibility of EditTextView is to request data and provide data
             val person = PersonDataCapture.capture(etFirstName.text.toString(), etLastName.text.toString())
             if (!PersonValidator.validate(this, person)) return@setOnClickListener
             AccountGenerator.createAccount(this, person)
