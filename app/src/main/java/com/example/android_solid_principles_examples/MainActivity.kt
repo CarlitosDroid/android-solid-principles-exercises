@@ -11,5 +11,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnRequestUserInfo.setOnClickListener {
+
+
+            ctvUserInfo.getUserInfoById(1)
+        }
+    }
+
+    fun showUserMessage(){
+
     }
 }
