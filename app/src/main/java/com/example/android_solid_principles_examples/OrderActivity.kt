@@ -23,10 +23,10 @@ class OrderActivity : AppCompatActivity() {
 
     //Making a POST HTTP REQUEST
     private fun createOrder(orderCreateRequest: OrderCreateRequest?) {
-        if (orderCreateRequest != null &&
-            !orderCreateRequest.brand!!.isEmpty() &&
-            !orderCreateRequest.model!!.isEmpty() &&
-            orderCreateRequest.price != 0
+        if (orderCreateRequest == null ||
+            orderCreateRequest.brand!!.isEmpty() ||
+            orderCreateRequest.model!!.isEmpty() ||
+            orderCreateRequest.price == 0
         ) {
             return
         }
@@ -48,6 +48,7 @@ class OrderActivity : AppCompatActivity() {
         //Go to HomeActivity
         Toast.makeText(this, "Order was successful", Toast.LENGTH_SHORT).show()
         startActivity(Intent(this, HomeActivity::class.java))
+        finish()
     }
 
 }
