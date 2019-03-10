@@ -10,4 +10,6 @@ object UserManager {
         user.age = 20
         return user
     }
+
+    //You can add more methods in order to get user by other parameters...
 }
