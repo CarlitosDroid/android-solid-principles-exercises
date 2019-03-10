@@ -1,5 +1,7 @@
 package com.example.android_solid_principles_examples
 
+import android.annotation.SuppressLint
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -12,13 +14,35 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnRequestUserInfo.setOnClickListener {
-
-
-            ctvUserInfo.getUserInfoById(1)
+            val userId = 1
+            UserInfoAsyncTask(userId).execute()
         }
     }
 
-    fun showUserMessage(){
+    private fun showUserMessage(string: String) {
+        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+    }
 
+    @SuppressLint("StaticFieldLeak")
+    inner class UserInfoAsyncTask(var userId: Int) : AsyncTask<Void, Void, User>() {
+
+        override fun onPreExecute() {
+            super.onPreExecute()
+            showUserMessage(getString(R.string.request_user_message, userId))
+        }
+
+        override fun doInBackground(vararg params: Void?): User {
+            val user = User()
+            Thread.sleep(3000)
+            user.name = "Carlos"
+            user.lastName = "Vargas"
+            user.age = 20
+            return user
+        }
+
+        override fun onPostExecute(user: User) {
+            super.onPostExecute(user)
+            ctvUserInfo.render(user)
+        }
     }
 }
