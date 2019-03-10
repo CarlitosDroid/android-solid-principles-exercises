@@ -32,12 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun doInBackground(vararg params: Void?): User {
-            val user = User()
-            Thread.sleep(3000)
-            user.name = "Carlos"
-            user.lastName = "Vargas"
-            user.age = 20
-            return user
+            return UserManager.getUserById(userId)
         }
 
         override fun onPostExecute(user: User) {

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">android-solid-principles-examples</string>
     <string name="request_user_message">Requesting User Info with id %1$d…</string>
+    <string name="user_information_message">"Name: %1$s \nLastName: %2$s \nAge: %3$d"</string>
 </resources>

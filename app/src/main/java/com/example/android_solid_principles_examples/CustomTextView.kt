@@ -11,6 +11,6 @@ class CustomTextView : TextView {
     constructor (context: Context, attrs: AttributeSet?) : super(context, attrs)
 
     fun render(user: User) {
-        text = "Name: ${user.name} \nLastName: ${user.lastName} \nAge: ${user.age}"
+        text = context.getString(R.string.user_information_message, user.name, user.lastName, user.age)
     }
 }
