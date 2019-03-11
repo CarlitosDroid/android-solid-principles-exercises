@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
 
         btnCalculateTotalSalary.setOnClickListener {
 
-            val developerReportList = mutableListOf<DeveloperReport>()
-            developerReportList.add(DeveloperReport(1, "Dev1", "Senior developer", 30.5, 160))
-            developerReportList.add(DeveloperReport(2, "Dev2", "Junior developer", 20.0, 150))
-            developerReportList.add(DeveloperReport(3, "Dev3", "Senior developer", 30.5, 180))
+            val developerReportList = mutableListOf<BaseSalaryCalculator>()
+            developerReportList.add(SeniorDevSalaryCalculator(DeveloperReport(1, "Dev1", "Senior developer", 30.5, 160)))
+            developerReportList.add(JuniorDevSalaryCalculator(DeveloperReport(2, "Dev2", "Junior developer", 20.0, 150)))
+            developerReportList.add(SeniorDevSalaryCalculator(DeveloperReport(3, "Dev3", "Senior developer", 30.5, 180)))
 
             val salaryCalculator = SalaryCalculator(developerReportList)
             Toast.makeText(this,
