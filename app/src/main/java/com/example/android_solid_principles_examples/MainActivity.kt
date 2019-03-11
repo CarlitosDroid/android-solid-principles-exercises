@@ -21,10 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         val monitorFilter = MonitorFilter()
 
-        btnFilter.setOnClickListener {
+        btnFilterByType.setOnClickListener {
             val lcdMonitors = monitorFilter.filterByType(monitors, MonitorType.LCD)
-
-            Log.e("All LCD monitors", "All LCD monitors")
             for (lcdMonitor in lcdMonitors) {
                 Log.e(
                     "Filtered monitor",

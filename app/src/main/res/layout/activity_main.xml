@@ -7,10 +7,10 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <Button
-            android:text="Filter"
+            android:text="Filter By Type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnFilter" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/btnFilterByType" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
             android:background="@color/colorPrimaryDark" android:textColor="@android:color/white"/>
